@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport para adaptabilidad -->
     <title>Un ramo para ti</title>
     <style>
         body {
@@ -19,74 +20,77 @@
         .container {
             position: relative;
             text-align: center;
+            width: 90%; /* Ancho adaptativo */
+            max-width: 600px; /* Ancho máximo */
         }
 
         .glass {
-            height: 800px;
-            width: 600px;
+            width: 100%; /* Ancho adaptativo */
+            height: auto; /* Altura automática */
+            aspect-ratio: 600 / 800; /* Mantener proporción del frasco */
             background: #122139;
-            border-radius: 300px 300px 0px 0px;
+            border-radius: 50% 50% 0 0;
             position: relative;
         }
 
         .glass:before {
             content: "";
-            height: 40px;
-            width: 40px;
+            width: 6.67%; /* Adaptativo */
+            height: 5%; /* Adaptativo */
             transform-origin: center;
-            border: 25px solid #122139;
+            border: 4.17% solid #122139; /* Adaptativo */
             border-radius: 100%;
             position: absolute;
-            left: 256px;
-            top: -74px;
+            left: 42.67%; /* Adaptativo */
+            top: -9.25%; /* Adaptativo */
         }
 
         .glass:after {
             content: "";
             position: absolute;
-            height: 15px;
-            width: 600px;
+            width: 100%; /* Adaptativo */
+            height: 1.875%; /* Adaptativo */
             background: #a52a2a;
             top: 100%;
             left: 0%;
         }
 
         .shine {
-            width: 26px;
-            height: 330px;
+            width: 4.33%; /* Adaptativo */
+            height: 41.25%; /* Adaptativo */
             background: white;
             opacity: 0.2;
             position: absolute;
             left: 85%;
-            top: 200px;
+            top: 25%; /* Adaptativo */
             border-radius: 100px;
             z-index: 10;
         }
 
         .shine:before {
             content: "";
-            width: 26px;
-            height: 40px;
+            width: 4.33%; /* Adaptativo */
+            height: 5%; /* Adaptativo */
             position: absolute;
             background: white;
-            top: 365px;
+            top: 45.625%; /* Adaptativo */
             border-radius: 100px;
         }
 
         .petals>div {
             position: absolute;
             background: #d52d58;
-            width: 85px;
-            height: 120px;
-            top: 200px;
+            width: 14.17%; /* Adaptativo */
+            height: 15%; /* Adaptativo */
+            top: 25%; /* Adaptativo */
             transition: all 0.5s ease-out;
         }
 
         .petals>div:nth-child(1) {
             border-radius: 15px;
             box-shadow: 0px 0px 60px rgba(245, 148, 184, 1);
-            left: 268px;
-            top: 200px;
+            left: 44.67%; /* Adaptativo */
+            top: 25%; /* Adaptativo */
             background: #d52d58;
         }
 
@@ -94,7 +98,7 @@
         .petals>div:nth-child(4),
         .petals>div:nth-child(6) {
             background: #b81b43;
-            left: 230px;
+            left: 38.33%; /* Adaptativo */
             border-radius: 0px 50px 0px 50px;
             transform-origin: bottom right;
         }
@@ -103,7 +107,7 @@
         .petals>div:nth-child(5),
         .petals>div:nth-child(7) {
             background: #b81b43;
-            left: 300px;
+            left: 50%; /* Adaptativo */
             border-radius: 50px 0px 50px 0px;
             transform-origin: bottom left;
         }
@@ -111,8 +115,8 @@
         .petals>div:nth-child(2) {
             z-index: 5;
             background: #ab1a3f;
-            top: 218px;
-            height: 130px;
+            top: 27.25%; /* Adaptativo */
+            height: 16.25%; /* Adaptativo */
             box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
             animation: bloom2 3s ease-in-out;
             animation-fill-mode: forwards;
@@ -121,8 +125,8 @@
         .petals>div:nth-child(3) {
             z-index: 4;
             background: #ab1a3f;
-            top: 218px;
-            height: 130px;
+            top: 27.25%; /* Adaptativo */
+            height: 16.25%; /* Adaptativo */
             box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
             animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
             animation-fill-mode: forwards;
@@ -131,8 +135,8 @@
         .petals>div:nth-child(4) {
             z-index: 3;
             background: #b81b43;
-            top: 213px;
-            height: 135px;
+            top: 26.625%; /* Adaptativo */
+            height: 16.875%; /* Adaptativo */
             box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
             animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
             animation-fill-mode: forwards;
@@ -141,8 +145,8 @@
         .petals>div:nth-child(5) {
             z-index: 2;
             background: #b81b43;
-            top: 213px;
-            height: 135px;
+            top: 26.625%; /* Adaptativo */
+            height: 16.875%; /* Adaptativo */
             box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
             animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
             animation-fill-mode: forwards;
@@ -151,8 +155,8 @@
         .petals>div:nth-child(6) {
             z-index: 1;
             background: #c9204b;
-            top: 200px;
-            height: 130px;
+            top: 25%; /* Adaptativo */
+            height: 16.25%; /* Adaptativo */
             box-shadow: 0px 0px 60px rgba(245, 148, 184, .3);
             animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
             animation-fill-mode: forwards;
@@ -161,8 +165,8 @@
         .petals>div:nth-child(7) {
             z-index: 0;
             background: #c9204b;
-            top: 200px;
-            height: 130px;
+            top: 25%; /* Adaptativo */
+            height: 16.25%; /* Adaptativo */
             box-shadow: 0px 0px 60px rgba(245, 148, 184, .3);
             animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
             animation-fill-mode: forwards;
@@ -171,9 +175,9 @@
         .deadPetals>div {
             position: absolute;
             background: #d52d58;
-            width: 20px;
-            height: 15px;
-            top: 200px;
+            width: 3.33%; /* Adaptativo */
+            height: 1.875%; /* Adaptativo */
+            top: 25%; /* Adaptativo */
             border-radius: 0px 30px 0px 30px;
             box-shadow: 0px 0px 30px rgba(245, 148, 184, .5);
             transition: all 0.5s ease-out;
@@ -205,49 +209,49 @@
 
         .leaves>div:nth-last-child(1) {
             position: absolute;
-            width: 55px;
-            height: 30px;
+            width: 9.17%; /* Adaptativo */
+            height: 3.75%; /* Adaptativo */
             background: #338f37;
-            top: 334px;
-            left: 278px;
+            top: 41.75%; /* Adaptativo */
+            left: 46.33%; /* Adaptativo */
             border-radius: 100px;
         }
 
         .leaves>div:nth-child(1) {
             position: absolute;
-            width: 15px;
-            height: 390px;
+            width: 2.5%; /* Adaptativo */
+            height: 48.75%; /* Adaptativo */
             background: #054c05;
-            top: 308px;
-            left: 300px;
+            top: 38.5%; /* Adaptativo */
+            left: 50%; /* Adaptativo */
             border-radius: 0 0 100px 100px;
         }
 
         .leaves>div:nth-child(2) {
             position: absolute;
-            width: 60px;
-            height: 100px;
-            top: 53px;
+            width: 10%; /* Adaptativo */
+            height: 12.5%; /* Adaptativo */
+            top: 6.625%; /* Adaptativo */
             border-radius: 10px 80px 40px 80px;
             background: #054c05;
             transform-origin: bottom;
             transform: rotate(-30deg);
-            top: 412px;
-            left: 254px;
+            top: 51.5%; /* Adaptativo */
+            left: 42.33%; /* Adaptativo */
             box-shadow: inset 10px 10px #066406;
         }
 
         .leaves>div:nth-child(3) {
             position: absolute;
-            width: 60px;
-            height: 100px;
-            top: 53px;
+            width: 10%; /* Adaptativo */
+            height: 12.5%; /* Adaptativo */
+            top: 6.625%; /* Adaptativo */
             border-radius: 80px 1px 80px 40px;
             background: #054c05;
             transform-origin: bottom;
             transform: rotate(30deg);
-            top: 360px;
-            left: 300px;
+            top: 45%; /* Adaptativo */
+            left: 50%; /* Adaptativo */
             box-shadow: inset -10px 10px #066406;
         }
 
@@ -255,46 +259,46 @@
             position: absolute;
             width: 0;
             height: 0;
-            top: 200px;
+            top: 25%; /* Adaptativo */
         }
 
         .thorns>div:nth-child(odd) {
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-left: 15px solid #054c05;
-            left: 315px;
+            border-top: 2.5% solid transparent; /* Adaptativo */
+            border-bottom: 2.5% solid transparent; /* Adaptativo */
+            border-left: 2.5% solid #054c05; /* Adaptativo */
+            left: 52.5%; /* Adaptativo */
         }
 
         .thorns>div:nth-child(even) {
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-right: 15px solid #054c05;
-            left: 285px;
+            border-top: 2.5% solid transparent; /* Adaptativo */
+            border-bottom: 2.5% solid transparent; /* Adaptativo */
+            border-right: 2.5% solid #054c05; /* Adaptativo */
+            left: 47.5%; /* Adaptativo */
         }
 
         .thorns>div:nth-child(1) {
-            top: 465px;
+            top: 58.125%; /* Adaptativo */
         }
 
         .thorns>div:nth-child(2) {
-            top: 390px;
+            top: 48.75%; /* Adaptativo */
         }
 
         .thorns>div:nth-child(4) {
-            top: 525px;
+            top: 65.625%; /* Adaptativo */
         }
 
         @keyframes bloom2 {
             50% {
                 transform: rotate(-90deg);
-                top: 400px;
-                left: 150px;
+                top: 50%; /* Adaptativo */
+                left: 25%; /* Adaptativo */
             }
 
             100% {
                 transform: rotate(-60deg);
-                top: 615px;
-                left: 100px;
+                top: 76.875%; /* Adaptativo */
+                left: 16.67%; /* Adaptativo */
                 background: #71122a;
                 box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
             }
@@ -339,20 +343,20 @@
 
         @keyframes falling {
             20% {
-                top: 335px;
+                top: 41.875%; /* Adaptativo */
                 background: #9d193b;
                 box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
             }
 
             100% {
-                top: 335px;
+                top: 41.875%; /* Adaptativo */
                 opacity: 0;
             }
         }
 
         .texto {
             color: white;
-            font-size: 35px;
+            font-size: 5vw; /* Tamaño de texto adaptativo */
             margin-top: 20px; /* Espacio entre el ramo y el texto */
             text-align: center;
         }
