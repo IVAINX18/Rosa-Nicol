@@ -3,21 +3,22 @@
 
 <head>
     <meta charset="utf-8" />
-
     <title>Un ramo para ti</title>
     <style>
         body {
-            height: 100%;
+            height: 100vh;
             width: 100%;
             background: #080f1a;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
         }
 
         .container {
-            position: absolute;
-            left: 50%;
-            top: 30%;
-            transform: translate(-50%, -50%);
+            position: relative;
+            text-align: center;
         }
 
         .glass {
@@ -25,6 +26,7 @@
             width: 600px;
             background: #122139;
             border-radius: 300px 300px 0px 0px;
+            position: relative;
         }
 
         .glass:before {
@@ -349,11 +351,10 @@
         }
 
         .texto {
-            top: 50%;
             color: white;
             font-size: 35px;
-            position: absolute;
-            left: 10%;
+            margin-top: 20px; /* Espacio entre el ramo y el texto */
+            text-align: center;
         }
     </style>
 </head>
@@ -390,9 +391,7 @@
             <div></div>
             <div></div>
         </div>
-    </div>
-    <div>
-        <h4 class="texto">Mi amor por ti durará hasta que caiga el último pétalo ❤️</h>
+        <h4 class="texto">Mi amor por ti durará hasta que caiga el último pétalo ❤️</h4>
     </div>
 </body>
 
